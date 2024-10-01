@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-	<link rel="icon" href="/images/A.png">
+	<link rel="icon" href="/assets/images/A.png">
 
 	<link rel="stylesheet" href="css/font.css" />
     <link rel="stylesheet" href="css/output.css" />
@@ -33,37 +33,67 @@
 
 <style>
 
-/* Resume */
-.section-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #007bff;
-    }
-    .section-content {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 30px;
-      box-shadow: 0px 4px 6px rgba(211, 210, 210, 0.1);
-	  color: white;
-    }
-    .timeline-dot {
-      width: 20px;
-      height: 20px;
-      margin: 0 auto;
-      background-color: #007bff;
-      border-radius: 50%;
+/* Timeline styles */
+.timeline {
       position: relative;
-      z-index: 1;
-    }
-    .timeline-line {
-      width: 2px;
-      height: 100%;
-      margin: 0 auto;
-      background-color: #007bff;
+      padding-left: 40px;
+      margin-bottom: 30px;
     }
 
+    /* Vertical Line for Timeline */
+    .timeline:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 20px; /* Aligns the line with the center of the circle */
+      width: 2px;
+      background-color: #007bff; /* Blue color for the line */
+      z-index: -1; /* Keeps the line behind the timeline icon */
+    }
+
+    /* Timeline Circle (Dot) */
+    .timeline-icon {
+      position: absolute;
+      left: 10px; /* Align the dot with the line */
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border: 2px solid #007bff; /* Blue border */
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    /* Text Styling for Resume Sections */
+    .section-header {
+      font-size: 1.75rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .resume-item {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .resume-item h5 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .resume-item p {
+      margin-bottom: 10px;
+    }
+
+    /* Adjust for smaller screens */
+    @media (max-width: 767px) {
+      .timeline:before {
+        display: none;
+      }
+      .timeline-icon {
+        display: none;
+      }
+    }
 /*======================================
 //--//-->   ABOUT
 ======================================*/
@@ -350,7 +380,7 @@
 									<div class="row">
 										<div class="col-sm-6 col-md-5">
 										<div class="about-img">
-											<img src="images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
+											<img src="/assets/images/about-me.png" class="img-fluid rounded b-shadow-a" alt="">
 										</div>
 										</div>
 										<!-- Details next to profile image -->
@@ -443,124 +473,92 @@
 		<br>
 		
 		<section id="resume" class="resume section">
-			<!-- Section Title -->
-			<div class="container section-title" data-aos="fade-up">
-			  <h2>My Resume</h2>
-			</div><!-- End Section Title -->
-	  
 			<div class="container py-5">
-				<!-- Summary Section -->
+				<div class="text-center mb-5">
+				  <h2 class="section-header">Resume</h2>
+				  <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit.</p>
+				</div>
+			  
 				<div class="row">
-				  <div class="col-12">
-					<h2 class="section-title">Summary</h2>
-					<div class="section-content ">
+				  <div class="col-md-6">
+					<!-- Summary Section -->
+					<h4 class="section-header">Summary</h4>
+					<div class="resume-item timeline">
+					  <div class="timeline-icon"></div>
+					  <h5>Atharv Ingale</h5>
 					  <p>I am an enthusiastic professional in web development, specializing in front-end and back-end technologies. Skilled in creating user-friendly, responsive designs using HTML, CSS, JavaScript, and Bootstrap. Passionate about learning new technologies and optimizing the performance of websites and applications.</p>
-					</div>
-				  </div>
-				</div>
-			  
-				<!-- Experience Section -->
-				<div class="row">
-				  <div class="col-12">
-					<h2 class="section-title">Experience</h2>
-					<div class="timeline">
-					  <!-- Experience Item 1 -->
-					  <div class="row g-0 mb-5 align-items-center">
-						<div class="col-md-2 text-md-end text-center">
-						  <div class="timeline-date bg-primary text-black p-2 rounded">2024 - Present</div>
-						</div>
-						<div class="col-md-1 text-center">
-						  <div class="timeline-dot"></div>
-						  <div class="timeline-line"></div>
-						</div>
-						<div class="col-md-9">
-						  <div class="section-content">
-							<h5>-Front-End Developer & Django</h5>
-							<p>-Elite Software (Intern)</p>
-							<p>-Worked on designing and developing responsive web interfaces using HTML, CSS, JS and Django frameworks. Collaborated with team to create engaging user experiences.</p>
-						  </div>
-						</div>
-					  </div>
-			  
-					  <!-- Experience Item 2 -->
-					  <div class="row g-0 mb-5 align-items-center">
-						<div class="col-md-2 text-md-end text-center">
-						  <div class="timeline-date bg-primary text-black p-2 rounded">2021 - 2024</div>
-						</div>
-						<div class="col-md-1 text-center">
-						  <div class="timeline-dot"></div>
-						  <div class="timeline-line"></div>
-						</div>
-						<div class="col-md-9">
-						  <div class="section-content">
-							<h5>-Full-Stack Developer</h5>
-							<p>-Developed and maintained full-stack applications using JavaScript, React, Node.js, and MongoDB. Improved application performance by optimizing code and implementing best practices.</p>
-						  </div>
-						</div>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  
-				<!-- Hobbies Section -->
-				<div class="row">
-				  <div class="col-12">
-					<h2 class="section-title">Hobbies</h2>
-					<div class="section-content">
 					  <ul>
-						<li>-Drawing</li>
-						<li>-Playing football, Cricket </li>
-						<li>-Exploring new technologies </li>
+						<li>Pune, India </li>
+						<li>+91 7709378283</li>
+						<li>atharvingale564@gmail.com</li>
+					  </ul>
+					</div>
+			  
+					<!-- Education Section -->
+					<h4 class="section-header">Education</h4>
+					<div class="resume-item timeline">
+					  <div class="timeline-icon"></div>
+					  <h5>Bachelor's Degree in Information Technology</h5>
+					  <p>2024 - Present</p>
+					  <p><strong>University Name : SPPU</strong></p>
+					  <ul>
+						<li>Studied concepts including algorithms, data structures, databases, and web development. Worked on various academic and personal projects using Javascript, Python, and web technologies.</li>
+					  </ul>
+					</div>
+			  
+					<div class="resume-item timeline">
+					  <div class="timeline-icon"></div>
+					  <h5>SSC & HSC</h5>
+					  <p>2019 | 2021</p>
+					  <p><strong>Maharashtra Board</strong></p>
+					  <ul>
+						<li>Sou. vimlabai Garware Prashala | N.M.V. Jr College</li>
+						<li>Excelled in mathematics and computer science subjects. Participated in coding competitions and robotics club.</li>
+					  </ul>
+					</div>
+				  </div>
+			  
+				  <div class="col-md-6">
+					<!-- Professional Experience Section -->
+					<h4 class="section-header">Professional Experience</h4>
+					<div class="resume-item timeline">
+					  <div class="timeline-icon"></div>
+					  <h5>Full stack Web Developer</h5>
+					  <p> Present</p>
+					  <p><strong>Elite Software (Intern)</strong>, Pune, India</p>
+					  <ul>
+						<li>Worked on designing and developing responsive web interfaces using HTML, CSS, JS and Django frameworks. Collaborated with team to create engaging user experiences.</li>
+						<li>Supervise the team and ensure project deadlines are met on time.</li>
+					  </ul>
+					</div>
+			  
+					<div class="resume-item timeline">
+					  <div class="timeline-icon"></div>
+					  <h5>Mern Stack Developer</h5>
+					  <p>2023 - 2024</p>
+					  <ul>
+						<li>Developed and maintained full-stack applications using JavaScript, React, Node.js, and MongoDB. Improved application performance by optimizing code and implementing best practices.</li>
+					  </ul>
+					</div>
+
+					<h4 class="section-header">Hobbies</h4>
+					<div class="resume-item timeline">
+					  <div class="timeline-icon"></div>
+					  <br>
+					  	<p>Drawing</p>
+						</p>Playing football, Cricket</p>
+						<p>Exploring new technologies
+						Education</p>
 					  </ul>
 					</div>
 				  </div>
 				</div>
-			  
-				<!-- Education Section -->
-				<div class="row">
-				  <div class="col-12">
-					<h2 class="section-title">Education</h2>
-					<div class="timeline">
-					  <!-- Education Item 1 -->
-					  <div class="row g-0 mb-5 align-items-center">
-						<div class="col-md-2 text-md-end text-center">
-						  <div class="timeline-date bg-primary text-black p-2 rounded">2024 - Present</div>
-						</div>
-						<div class="col-md-1 text-center">
-						  <div class="timeline-dot"></div>
-						  <div class="timeline-line"></div>
-						</div>
-						<div class="col-md-9">
-						  <div class="section-content">
-							<h5>-Bachelor's Degree in Information Technology</h5>
-							<p>-SPPU</p>
-							<p>-Studied concepts including algorithms, data structures, databases, and web development. Worked on various academic and personal projects using Javascript, Python, and web technologies.</p>
-						  </div>
-						</div>
-					  </div>
-			  
-					  <!-- Education Item 2 -->
-					  <div class="row g-0 mb-5 align-items-center">
-						<div class="col-md-2 text-md-end text-center">
-						  <div class="timeline-date bg-primary text-black p-2 rounded">2019 - 2023</div>
-						</div>
-						<div class="col-md-1 text-center">
-						  <div class="timeline-dot"></div>
-						</div>
-						<div class="col-md-9">
-						  <div class="section-content">
-							<h5>-SSC & HSC </h5>
-							<p>-Sou. vimlabai Garware Prashala | N.M.V. Jr College</p>
-							<p>-Excelled in mathematics and computer science subjects. Participated in coding competitions and robotics club.</p>
-						  </div>
-						</div>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  
 			  </div>
 			</section>
+
+
+			
+			  
 
     <section class="ftco-section" id="project-section">
       <div class="container">
@@ -574,7 +572,7 @@
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
+              <a href="#" class="block-20 zoom-effect" style="background-image: url('/assets/images/proj_1.jpg');">
               </a>
               <div class="text mt-3 float-right d-block">
 
@@ -585,7 +583,7 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
+              <a href="#" class="block-20 zoom-effect" style="background-image: url('/assets/images/proj_2.jpg');">
               </a>
               <div class="text mt-3 float-right d-block">
 
@@ -596,7 +594,7 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry">
-              <a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
+              <a href="#" class="block-20 zoom-effect" style="background-image: url('/assets/images/proj_3.jpg');">
               </a>
               <div class="text mt-3 float-right d-block">
 
@@ -610,7 +608,7 @@
 	<div class="row d-flex justify-content-center">  
 		<div class="col-md-4 d-flex ftco-animate">
 			<div class="blog-entry justify-content-end">
-			<a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
+			<a href="#" class="block-20 zoom-effect" style="background-image: url('/assets/images/proj_4.jpg');">
 			</a>
 			<div class="text mt-3 float-right d-block">
 
@@ -621,7 +619,7 @@
 		</div>
 		<div class="col-md-4 d-flex ftco-animate">
 			<div class="blog-entry justify-content-end">
-			<a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');">
+			<a href="#" class="block-20 zoom-effect" style="background-image: url('/assets/images/proj_5.jpg');">
 			</a>
 			<div class="text mt-3 float-right d-block">
 
@@ -655,7 +653,7 @@
         </div>
       </div>
 	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(/assets/images/bg_1.jpg)">
 			<!-- <div class="container"> -->
 				<div class="row justify-content-center">
 					<div class="col-md-7 ftco-animate text-center">
