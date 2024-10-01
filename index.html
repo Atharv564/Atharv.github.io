@@ -178,6 +178,19 @@
 .zoom-effect:hover {
   transform: scale(1.1);
 }
+h1 {
+  position: relative;
+  z-index: 10; /* Ensures the text is above other content */
+  color: #fff; /* Or whatever text color you want */
+}
+
+/* Media Query for smaller devices */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px; /* Adjust this as needed */
+    margin-right: 0;  /* Prevent overflow */
+  }
+}
 
 
 </style>
