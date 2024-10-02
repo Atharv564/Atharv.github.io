@@ -7,10 +7,6 @@ Welcome to my personal portfolio website! This repository contains the source co
 - [Overview](#overview)
 - [Features](#features)
 - [Technologies](#technologies)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contact](#contact)
 
 ## Overview
 
